@@ -28,10 +28,19 @@ body {
     perspective: 1000px;
     transform-style: preserve-3d;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
     width: 100%;
     margin-top: -80px; /* Compensate for body padding */
     padding-top: 80px; /* Ensure content starts below header */
+}
+
+/* Mobile perspective container adjustments */
+@media (max-width: 768px) {
+    .perspective-container {
+        overflow-y: auto;
+        margin-top: -60px; /* Adjust for smaller header */
+        padding-top: 60px;
+    }
 }
 
 /* Glassmorphism Effects */
@@ -1805,6 +1814,19 @@ footer {
     transform-origin: center;
 }
 
+/* Hamburger menu animation */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 /* Mobile menu toggle for small screens */
 @media (max-width: 768px) {
     .mobile-menu-toggle {
@@ -1816,6 +1838,7 @@ footer {
         top: 0;
         right: -100%;
         width: 70%;
+        max-width: 300px;
         height: 100vh;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
@@ -1835,6 +1858,8 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        width: 100%;
+        padding: 80px 0 40px;
     }
     
     nav ul li {
@@ -1847,6 +1872,7 @@ footer {
         padding: 15px;
         margin: 0 20px;
         border-radius: 30px;
+        width: calc(100% - 40px);
     }
     
     /* Close button for mobile menu */
@@ -1858,6 +1884,11 @@ footer {
         color: var(--light-text);
         cursor: pointer;
         display: block;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
