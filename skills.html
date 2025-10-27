@@ -13,7 +13,13 @@
     <header>
         <div class="glass-navbar">
             <div class="logo">GAGAN</div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
+                <div class="close-menu">×</div>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -198,18 +204,6 @@
                                     <div class="skill-percentage">70%</div>
                                 </div>
                             </a>
-                            <a href="tools-technologies.html" class="skill-item-link">
-                                <div class="skill-item" data-aos="fade-up" data-aos-delay="600">
-                                    <div class="skill-icon">
-                                        <i class='bx bx-code-curly'></i>
-                                    </div>
-                                    <h3>Cursor AI</h3>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" style="width: 70%"></div>
-                                    </div>
-                                    <div class="skill-percentage">70%</div>
-                                </div>
-                            </a>
                         </div>
                     </div>
 
@@ -220,9 +214,9 @@
                             <a href="soft-skills.html" class="skill-item-link">
                                 <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
                                     <div class="skill-icon">
-                                        <i class='bx bx-brain'></i>
+                                        <i class='bx bx-group'></i>
                                     </div>
-                                    <h3>Problem Solving</h3>
+                                    <h3>Teamwork</h3>
                                     <div class="skill-bar">
                                         <div class="skill-progress" style="width: 85%"></div>
                                     </div>
@@ -232,9 +226,9 @@
                             <a href="soft-skills.html" class="skill-item-link">
                                 <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
                                     <div class="skill-icon">
-                                        <i class='bx bx-group'></i>
+                                        <i class='bx bx-message-rounded-detail'></i>
                                     </div>
-                                    <h3>Team Collaboration</h3>
+                                    <h3>Communication</h3>
                                     <div class="skill-bar">
                                         <div class="skill-progress" style="width: 80%"></div>
                                     </div>
@@ -244,13 +238,13 @@
                             <a href="soft-skills.html" class="skill-item-link">
                                 <div class="skill-item" data-aos="fade-up" data-aos-delay="400">
                                     <div class="skill-icon">
-                                        <i class='bx bx-time'></i>
+                                        <i class='bx bx-brain'></i>
                                     </div>
-                                    <h3>Time Management</h3>
+                                    <h3>Problem Solving</h3>
                                     <div class="skill-bar">
-                                        <div class="skill-progress" style="width: 75%"></div>
+                                        <div class="skill-progress" style="width: 90%"></div>
                                     </div>
-                                    <div class="skill-percentage">75%</div>
+                                    <div class="skill-percentage">90%</div>
                                 </div>
                             </a>
                         </div>
@@ -261,32 +255,15 @@
 
         <section class="languages-section glass-section">
             <h2 data-aos="fade-up">Languages</h2>
-            <p class="section-description" data-aos="fade-up" data-aos-delay="100">Languages I speak and their proficiency levels. <a href="languages.html">View detailed information</a>.</p>
             <div class="languages-grid">
-                <a href="languages.html" class="skill-item-link">
-                    <div class="language-item" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Kannada</h3>
-                        <div class="language-level">Native</div>
-                    </div>
-                </a>
-                <a href="languages.html" class="skill-item-link">
-                    <div class="language-item" data-aos="fade-up" data-aos-delay="300">
-                        <h3>Telugu</h3>
-                        <div class="language-level">Fluent</div>
-                    </div>
-                </a>
-                <a href="languages.html" class="skill-item-link">
-                    <div class="language-item" data-aos="fade-up" data-aos-delay="400">
-                        <h3>English</h3>
-                        <div class="language-level">Fluent</div>
-                    </div>
-                </a>
-                <a href="languages.html" class="skill-item-link">
-                    <div class="language-item" data-aos="fade-up" data-aos-delay="500">
-                        <h3>Tamil</h3>
-                        <div class="language-level">Fluent</div>
-                    </div>
-                </a>
+                <div class="language-item" data-aos="fade-up" data-aos-delay="200">
+                    <h3>English</h3>
+                    <div class="language-level">Fluent</div>
+                </div>
+                <div class="language-item" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Tamil</h3>
+                    <div class="language-level">Native</div>
+                </div>
             </div>
         </section>
 
@@ -310,5 +287,26 @@
         });
     </script>
     <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('nav');
+        const closeMenu = document.querySelector('.close-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            nav.classList.add('active');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            nav.classList.remove('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
