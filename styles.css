@@ -822,7 +822,8 @@ nav ul li a.active {
     position: relative;
 }
 
-.education-timeline::before {
+/* Removed the vertical timeline line as requested */
+/*.education-timeline::before {
     content: '';
     position: absolute;
     top: 0;
@@ -833,7 +834,7 @@ nav ul li a.active {
     margin-left: -2px;
     border-radius: 2px;
     z-index: 1;
-}
+}*/
 
 .timeline-item {
     display: flex;
@@ -1825,9 +1826,10 @@ footer {
     }
     
     /* Education timeline adjustments */
-    .education-timeline::before {
+    /* Removed the vertical timeline line as requested */
+    /*.education-timeline::before {
         left: 30px;
-    }
+    }*/
     
     .timeline-item::before {
         left: 22px;
@@ -1922,9 +1924,10 @@ footer {
     }
     
     /* Education timeline adjustments */
-    .education-timeline::before {
+    /* Removed the vertical timeline line as requested */
+    /*.education-timeline::before {
         left: 30px;
-    }
+    }*/
     
     .timeline-item::before {
         left: 22px;
@@ -2100,9 +2103,10 @@ footer {
     }
     
     /* Education timeline mobile adjustments */
-    .education-timeline::before {
+    /* Removed the vertical timeline line as requested */
+    /*.education-timeline::before {
         left: 20px;
-    }
+    }*/
     
     .timeline-item::before {
         left: 12px;
@@ -3196,9 +3200,10 @@ body {
     }
     
     /* Education timeline adjustments */
-    .education-timeline::before {
+    /* Removed the vertical timeline line as requested */
+    /*.education-timeline::before {
         left: 30px;
-    }
+    }*/
     
     .timeline-item::before {
         left: 22px;
@@ -3266,9 +3271,10 @@ body {
     }
     
     /* Education timeline adjustments */
-    .education-timeline::before {
+    /* Removed the vertical timeline line as requested */
+    /*.education-timeline::before {
         left: 30px;
-    }
+    }*/
     
     .timeline-item::before {
         left: 22px;
@@ -3384,9 +3390,10 @@ body {
     }
     
     /* Education timeline mobile adjustments */
-    .education-timeline::before {
+    /* Removed the vertical timeline line as requested */
+    /*.education-timeline::before {
         left: 20px;
-    }
+    }*/
     
     .timeline-item::before {
         left: 12px;
