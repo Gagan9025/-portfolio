@@ -11,10 +11,12 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body {
     overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
 }
 
@@ -23,6 +25,7 @@ body {
     perspective: 1000px;
     transform-style: preserve-3d;
     overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
 }
 
@@ -89,6 +92,7 @@ nav ul li a.active {
     margin: 0 auto;
     max-width: 1200px;
     overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
 }
 
@@ -386,6 +390,7 @@ nav ul li a.active {
     align-items: center;
     margin-top: 50px;
     overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
 }
 
@@ -402,6 +407,7 @@ nav ul li a.active {
     gap: 50px;
     margin-top: 50px;
     overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
 }
 
@@ -848,6 +854,7 @@ nav ul li a.active {
     gap: 40px;
     margin-top: 50px;
     overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
 }
 
@@ -1987,6 +1994,7 @@ html, body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Skills Section */
@@ -2287,6 +2295,7 @@ body {
     position: relative;
     z-index: 1;
     overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
 }
 
