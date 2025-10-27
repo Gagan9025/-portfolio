@@ -167,6 +167,109 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+    
+    // Enhanced 3D tilt effect for multilingual welcome
+    const welcomeContainer = document.querySelector('.multilingual-welcome');
+    if (welcomeContainer) {
+        welcomeContainer.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateY = ((x - centerX) / centerX) * 15; // Max 15 degrees
+            const rotateX = -((y - centerY) / centerY) * 15; // Max 15 degrees
+            
+            this.style.transform = `perspective(1500px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+            
+            // Add shine effect to active message
+            const activeMessage = this.querySelector('.welcome-message.active');
+            if (activeMessage) {
+                const shine = activeMessage.querySelector('.welcome-text::before');
+                if (shine) {
+                    shine.style.left = `${(x / rect.width) * 100}%`;
+                }
+            }
+        });
+        
+        welcomeContainer.addEventListener('mouseleave', function() {
+            this.style.transform = 'perspective(1500px) rotateY(0) rotateX(0)';
+        });
+    }
+    
+    // Add advanced animation sequence for language switching
+    function animateLanguageSwitch(oldIndex, newIndex) {
+        const messages = document.querySelectorAll('.welcome-message');
+        const dots = document.querySelectorAll('.indicator-dot');
+        
+        // Animate out the old message
+        if (messages[oldIndex]) {
+            messages[oldIndex].style.transform = 'translateZ(-100px) rotateX(-90deg) rotateY(-5deg) scale(0.8)';
+            messages[oldIndex].style.opacity = '0';
+        }
+        
+        // Animate in the new message after a slight delay
+        setTimeout(() => {
+            if (messages[newIndex]) {
+                messages[newIndex].style.transform = 'translateZ(0) rotateX(0) rotateY(0) scale(1)';
+                messages[newIndex].style.opacity = '1';
+            }
+        }, 150);
+    }
+    
+    // Enhanced multilingual welcome rotation
+    const welcomeMessages = document.querySelectorAll('.welcome-message');
+    const indicatorDots = document.querySelectorAll('.indicator-dot');
+    let currentIndex = 0;
+    
+    function rotateWelcomeMessage() {
+        // Remove active class from current message and dot
+        welcomeMessages[currentIndex].classList.remove('active');
+        indicatorDots[currentIndex].classList.remove('active');
+        
+        // Move to next message
+        const oldIndex = currentIndex;
+        currentIndex = (currentIndex + 1) % welcomeMessages.length;
+        
+        // Add active class to new message and dot
+        welcomeMessages[currentIndex].classList.add('active');
+        indicatorDots[currentIndex].classList.add('active');
+        
+        // Animate the transition
+        animateLanguageSwitch(oldIndex, currentIndex);
+    }
+    
+    // Start rotation (but only if there are multiple messages)
+    if (welcomeMessages.length > 1) {
+        setInterval(rotateWelcomeMessage, 4000);
+    }
+    
+    // Add click functionality to indicator dots with animation
+    indicatorDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            // Don't do anything if clicking the active dot
+            if (index === currentIndex) return;
+            
+            // Remove active class from current message and dot
+            welcomeMessages[currentIndex].classList.remove('active');
+            indicatorDots[currentIndex].classList.remove('active');
+            
+            // Store old index for animation
+            const oldIndex = currentIndex;
+            
+            // Set new index
+            currentIndex = index;
+            
+            // Add active class to new message and dot
+            welcomeMessages[currentIndex].classList.add('active');
+            indicatorDots[currentIndex].classList.add('active');
+            
+            // Animate the transition
+            animateLanguageSwitch(oldIndex, currentIndex);
+        });
+    });
 });
 
 // Smooth scrolling for navigation links

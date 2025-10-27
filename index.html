@@ -43,6 +43,13 @@
 
         <section class="hero glass-section">
             <div class="hero-content" data-aos="fade-up">
+                <!-- Multilingual Welcome Headline -->
+                <div class="welcome-section">
+                    <h2 class="welcome-text english">🌟 Welcome 🚀</h2>
+                    <h2 class="welcome-text kannada">🙏 ಸ್ವಾಗತ 💫</h2>
+                    <h2 class="welcome-text telugu">🙏 స్వాగతం ✨</h2>
+                    <h2 class="welcome-text tamil">🙏 நல்வரவு 🎉</h2>
+                </div>
                 <h1>Hi, I'm <span class="highlight">GAGAN C</span></h1>
                 <h2>Full Stack Developer</h2>
                 <p>Building responsive and impressive web applications with modern technologies</p>
@@ -118,6 +125,50 @@
                     mobileMenuToggle.classList.remove('active');
                 }
             }
+        });
+        
+        // Enhanced rotation for welcome texts with animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const welcomeTexts = document.querySelectorAll('.welcome-text');
+            let currentIndex = 0;
+            
+            // Hide all except the first one
+            for (let i = 1; i < welcomeTexts.length; i++) {
+                welcomeTexts[i].style.display = 'none';
+                welcomeTexts[i].style.opacity = '0';
+                welcomeTexts[i].style.transform = 'translateY(20px)';
+            }
+            
+            // Set initial state for first element
+            welcomeTexts[0].style.display = 'block';
+            welcomeTexts[0].style.opacity = '1';
+            welcomeTexts[0].style.transform = 'translateY(0)';
+            
+            // Rotate welcome texts every 3 seconds with animations
+            setInterval(() => {
+                // Animate out current text
+                welcomeTexts[currentIndex].style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                welcomeTexts[currentIndex].style.opacity = '0';
+                welcomeTexts[currentIndex].style.transform = 'translateY(-20px)';
+                
+                // After a short delay, hide current and show next
+                setTimeout(() => {
+                    welcomeTexts[currentIndex].style.display = 'none';
+                    currentIndex = (currentIndex + 1) % welcomeTexts.length;
+                    
+                    // Prepare next text
+                    welcomeTexts[currentIndex].style.display = 'block';
+                    welcomeTexts[currentIndex].style.opacity = '0';
+                    welcomeTexts[currentIndex].style.transform = 'translateY(20px)';
+                    
+                    // Animate in next text
+                    setTimeout(() => {
+                        welcomeTexts[currentIndex].style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        welcomeTexts[currentIndex].style.opacity = '1';
+                        welcomeTexts[currentIndex].style.transform = 'translateY(0)';
+                    }, 50);
+                }, 500);
+            }, 3000);
         });
     </script>
 </body>
