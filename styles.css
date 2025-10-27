@@ -443,6 +443,7 @@ nav ul li a.active {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    text-align: center;
 }
 
 .glass-button::before {
@@ -512,6 +513,19 @@ nav ul li a.active {
 .btn-outline:active {
     transform: translateY(0) translateZ(10px) scale(0.98);
     transition: all 0.1s ease;
+}
+
+/* Centered Button Container */
+.btn-center {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Flexbox centered buttons */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .glass-circle {
