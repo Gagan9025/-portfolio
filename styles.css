@@ -11,22 +11,27 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: auto; /* Keep this for the main scrollbar */
+    scroll-padding-top: 80px; /* Add scroll padding for fixed header */
 }
 
 body {
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: auto; /* Changed back to auto for proper scrolling */
     width: 100%;
+    padding-top: 80px; /* Add padding to account for fixed header */
 }
+
 
 /* 3D Perspective Container */
 .perspective-container {
     perspective: 1000px;
     transform-style: preserve-3d;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     width: 100%;
+    margin-top: -80px; /* Compensate for body padding */
+    padding-top: 80px; /* Ensure content starts below header */
 }
 
 /* Glassmorphism Effects */
@@ -92,8 +97,9 @@ nav ul li a.active {
     margin: 0 auto;
     max-width: 1200px;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     width: 100%;
+    scroll-margin-top: 80px; /* Ensure proper spacing for scroll targets */
 }
 
 .glass-section h1 {
@@ -256,7 +262,7 @@ nav ul li a.active {
     align-items: center;
     justify-content: space-between;
     min-height: 100vh;
-    padding-top: 80px;
+    padding-top: 0; /* Remove padding as body now has padding */
     position: relative;
     overflow: hidden;
 }
@@ -390,7 +396,7 @@ nav ul li a.active {
     align-items: center;
     margin-top: 50px;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     width: 100%;
 }
 
@@ -407,7 +413,7 @@ nav ul li a.active {
     gap: 50px;
     margin-top: 50px;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     width: 100%;
 }
 
@@ -854,7 +860,7 @@ nav ul li a.active {
     gap: 40px;
     margin-top: 50px;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     width: 100%;
 }
 
@@ -1994,7 +2000,7 @@ html, body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 /* Skills Section */
@@ -2004,6 +2010,7 @@ html, body {
     gap: 30px;
     margin-top: 30px;
     overflow-x: hidden;
+    overflow-y: hidden;
     width: 100%;
 }
 
@@ -2295,7 +2302,7 @@ body {
     position: relative;
     z-index: 1;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     width: 100%;
 }
 
@@ -2306,7 +2313,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 120px 0 80px;
+    padding: 40px 0 80px; /* Reduced top padding to account for fixed header */
     position: relative;
 }
 
@@ -2801,7 +2808,7 @@ body {
 
 @media (max-width: 768px) {
     .experience-header {
-        padding: 100px 0 60px;
+        padding: 20px 0 60px; /* Reduced top padding for mobile */
         min-height: 50vh;
     }
     
@@ -2966,6 +2973,10 @@ body {
     
     .btn-outline {
         margin-left: 0;
+    }
+    
+    .experience-header {
+        padding: 0 0 40px; /* Further reduced padding for small screens */
     }
     
     /* Education timeline mobile adjustments */
