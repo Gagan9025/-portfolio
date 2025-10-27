@@ -1,0 +1,12 @@
+INSTRUCTIONS TO ADD YOUR PROFILE PHOTO:
+
+1. Place your profile photo in this folder (c:\GAGAN\portfolio\images\)
+2. Rename your photo to "profile-photo.jpg"
+3. For best results, use a square image (e.g., 600x600 pixels) in JPG format
+4. Your photo will automatically appear on the homepage in the glass circle
+
+If you want to use a different format (like PNG), you'll need to update the src attribute in index.html:
+- For PNG: src="images/profile-photo.png"
+- For GIF: src="images/profile-photo.gif"
+
+The current placeholder uses a data URL, which will be automatically replaced when you add your actual photo.
