@@ -373,6 +373,12 @@ nav ul li a.active {
     margin-top: 50px;
 }
 
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .personal-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -383,6 +389,11 @@ nav ul li a.active {
 .info-item h3 {
     color: var(--secondary-color);
     margin-bottom: 5px;
+}
+
+.info-item p {
+    color: var(--light-text);
+    font-weight: 500;
 }
 
 .education-timeline {
@@ -416,6 +427,7 @@ nav ul li a.active {
     transform: translateZ(0px);
     position: relative;
     overflow: hidden;
+    align-items: flex-start;
 }
 
 .timeline-item::before {
@@ -443,6 +455,11 @@ nav ul li a.active {
     position: relative;
     z-index: 3;
     padding-top: 5px;
+}
+
+.timeline-content {
+    flex: 1;
+    padding-left: 20px;
 }
 
 .timeline-content h3 {
@@ -1301,6 +1318,12 @@ footer {
     
     .about-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-image {
+        display: flex;
+        justify-content: center;
     }
     
     .personal-info {
@@ -1329,6 +1352,16 @@ footer {
     
     .timeline-item {
         margin-bottom: 80px;
+        flex-direction: column;
+    }
+    
+    .timeline-date {
+        margin-bottom: 15px;
+        min-width: auto;
+    }
+    
+    .timeline-content {
+        padding-left: 0;
     }
     
     .timeline-marker {
@@ -1380,6 +1413,16 @@ footer {
     
     .timeline-date {
         min-width: 100px;
+    }
+    
+    /* Story container adjustments */
+    .story-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Interests grid adjustments */
+    .interests-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1502,11 +1545,44 @@ footer {
     /* Story container adjustments */
     .story-container {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
     
     /* Interests grid adjustments */
     .interests-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* About section adjustments */
+    .about-grid {
+        gap: 20px;
+    }
+    
+    .personal-info {
+        gap: 15px;
+    }
+    
+    .info-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .info-item p {
+        font-size: 1rem;
+    }
+    
+    /* Education timeline mobile adjustments */
+    .timeline-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .timeline-description {
+        font-size: 0.95rem;
+    }
+    
+    .highlight-item {
+        padding: 4px 12px;
+        font-size: 0.8rem;
     }
 }
 
@@ -1905,6 +1981,9 @@ html, body {
     overflow: hidden;
     box-shadow: var(--glass-shadow);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .story-item:hover {
@@ -1924,6 +2003,13 @@ html, body {
 
 .story-item:hover .story-icon {
     transform: scale(1.2) rotate(10deg);
+}
+
+.story-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .story-content h3 {
@@ -1957,6 +2043,9 @@ html, body {
     position: relative;
     overflow: hidden;
     box-shadow: var(--glass-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .interest-item:hover {
@@ -1984,6 +2073,7 @@ html, body {
     color: var(--gray-text);
     line-height: 1.6;
     font-size: 0.95rem;
+    flex: 1;
 }
 
 /* Quote Section */
@@ -2852,5 +2942,52 @@ body {
     .highlight-item {
         padding: 4px 12px;
         font-size: 0.8rem;
+    }
+    
+    /* About section mobile adjustments */
+    .glass-section {
+        padding: 50px 15px;
+    }
+    
+    .about-grid {
+        gap: 25px;
+    }
+    
+    .personal-info {
+        gap: 15px;
+    }
+    
+    .quote-section {
+        padding: 15px;
+    }
+    
+    .quote p {
+        font-size: 1rem;
+    }
+    
+    /* Story section mobile adjustments */
+    .story-item {
+        padding: 20px;
+    }
+    
+    .story-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .story-content p {
+        font-size: 0.95rem;
+    }
+    
+    /* Interests section mobile adjustments */
+    .interest-item {
+        padding: 20px;
+    }
+    
+    .interest-item h3 {
+        font-size: 1.2rem;
+    }
+    
+    .interest-item p {
+        font-size: 0.9rem;
     }
 }
