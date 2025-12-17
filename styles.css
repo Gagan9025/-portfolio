@@ -336,7 +336,7 @@ body {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 20px 50px;
     background: rgba(255, 255, 255, 0.05);
