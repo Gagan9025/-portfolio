@@ -551,47 +551,10 @@ nav ul li a.active {
     align-items: center;
 }
 
-.glass-circle {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    /* Fallback for browsers that don't support backdrop-filter */
-    background: rgba(255, 255, 255, 0.05);
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    transform: translateZ(50px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    animation: float 6s ease-in-out infinite;
-}
 
-.glass-circle::before {
-    content: '';
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    background: var(--gradient-primary);
-    transform: rotate(45deg);
-    opacity: 0.2;
-    animation: rotate 10s linear infinite;
-}
-
-.glass-circle:hover {
-    transform: translateZ(80px) rotate(5deg);
-    box-shadow: 0 30px 70px rgba(138, 43, 226, 0.4);
-}
 
 /* Profile photo styles */
 .profile-photo {
-    width: 95%;
-    height: 95%;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid rgba(255, 255, 255, 0.1);
@@ -600,6 +563,8 @@ nav ul li a.active {
     position: relative;
     z-index: 2;
     animation: pulse 4s ease-in-out infinite;
+    max-width: 300px;
+    height: auto;
 }
 
 .profile-photo:hover {
@@ -612,22 +577,13 @@ nav ul li a.active {
 /* Animations for profile photo */
 @keyframes float {
     0% {
-        transform: translateZ(50px) translateY(0px);
+        transform: translateY(0px);
     }
     50% {
-        transform: translateZ(50px) translateY(-15px);
+        transform: translateY(-15px);
     }
     100% {
-        transform: translateZ(50px) translateY(0px);
-    }
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg) rotate(45deg);
-    }
-    to {
-        transform: rotate(360deg) rotate(45deg);
+        transform: translateY(0px);
     }
 }
 
