@@ -20,7 +20,7 @@ body {
     overflow-y: auto; /* Changed back to auto for proper scrolling */
     width: 100%;
     padding-top: 80px; /* Add padding to account for fixed header */
-    background-image: url('c:\Users\ggaga\OneDrive\รูปภาพ\WhatsApp Image 2025-09-04 at 19.02.41_7513ef2a.jpg');
+    background-image: url('images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

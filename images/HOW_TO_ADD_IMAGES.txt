@@ -1,0 +1,24 @@
+HOW TO ADD YOUR LOGO AND BACKGROUND IMAGES
+
+1. FOR THE LOGO IMAGE:
+   - Create or select your logo image
+   - Resize it to approximately 40px in height (width can be proportional)
+   - Save it as "logo.png" in this images folder
+   - Supported formats: PNG (recommended), JPG, GIF
+
+2. FOR THE BACKGROUND IMAGE:
+   - Create or select your background image
+   - For best results, use an image that is at least 1920x1080 pixels
+   - Save it as "background.jpg" in this images folder
+   - Supported formats: JPG (recommended), PNG
+
+3. ALTERNATIVE FILE NAMES:
+   - If you prefer different file names, you can update the references in:
+     - index.html (line 16 for logo)
+     - styles.css (line 23 for background)
+
+4. PROFILE PHOTO:
+   - To add your profile photo, replace the "profile-photo.jpg" file in this folder
+   - Use a square image (e.g., 600x600 pixels) for best results
+
+After adding your images, refresh your webpage to see the changes.
