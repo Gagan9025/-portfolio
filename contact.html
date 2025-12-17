@@ -19,10 +19,9 @@
                 <span></span>
             </button>
             <nav>
-                <div class="close-menu">×</div>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html">About Gagan</a></li>
                     <li><a href="skills.html">Skills</a></li>
                     <li><a href="languages.html">Languages</a></li>
                     <li><a href="projects.html">Projects</a></li>
@@ -108,16 +107,10 @@
         // Mobile menu toggle functionality
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const nav = document.querySelector('nav');
-        const closeMenu = document.querySelector('.close-menu');
         
         mobileMenuToggle.addEventListener('click', () => {
-            nav.classList.add('active');
-            mobileMenuToggle.classList.add('active');
-        });
-        
-        closeMenu.addEventListener('click', () => {
-            nav.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
+            nav.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
         });
         
         // Close menu when clicking on a link
