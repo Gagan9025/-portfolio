@@ -87,39 +87,38 @@
     </script>
     <script src="script.js"></script>
     <script>
-        // Mobile menu toggle functionality
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const nav = document.querySelector('nav');
-        
-        mobileMenuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            mobileMenuToggle.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                if (mobileMenuToggle) {
-                    mobileMenuToggle.classList.remove('active');
-                }
-            });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (nav && mobileMenuToggle) {
-                if (nav.classList.contains('active') && 
-                    !nav.contains(e.target) && 
-                    !mobileMenuToggle.contains(e.target)) {
-                    nav.classList.remove('active');
-                    mobileMenuToggle.classList.remove('active');
-                }
-            }
-        });
-        
-        // Enhanced rotation for welcome texts with animations
+        // Enhanced rotation for welcome texts with animations and mobile menu functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle functionality
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('nav');
+            
+            if (mobileMenuToggle && nav) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    nav.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+                
+                // Close menu when clicking on a link
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (nav.classList.contains('active') && 
+                        !nav.contains(e.target) && 
+                        !mobileMenuToggle.contains(e.target)) {
+                        nav.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Enhanced rotation for welcome texts with animations
             const welcomeTexts = document.querySelectorAll('.welcome-text');
             let currentIndex = 0;
             
@@ -161,6 +160,5 @@
                 }, 500);
             }, 3000);
         });
-    </script>
-</body>
+    </script></body>
 </html>

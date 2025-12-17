@@ -124,41 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Mobile menu toggle functionality
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('nav');
-    
-    if (mobileMenuToggle && nav) {
-        mobileMenuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            mobileMenuToggle.classList.toggle('active');
-        });
-    }
-    
-    // Close menu when clicking on a link
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (nav) {
-                nav.classList.remove('active');
-                if (mobileMenuToggle) {
-                    mobileMenuToggle.classList.remove('active');
-                }
-            }
-        });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (nav && mobileMenuToggle) {
-            if (nav.classList.contains('active') && 
-                !nav.contains(e.target) && 
-                !mobileMenuToggle.contains(e.target)) {
-                nav.classList.remove('active');
-                mobileMenuToggle.classList.remove('active');
-            }
-        }
-    });
     
     // Enhanced 3D tilt effect for multilingual welcome
     const welcomeContainer = document.querySelector('.multilingual-welcome');

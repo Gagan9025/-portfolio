@@ -373,6 +373,9 @@ body {
     width: auto;
 }
 
+nav {
+    display: block;
+}
 nav ul {
     display: flex;
     list-style: none;
@@ -383,7 +386,6 @@ nav ul {
     justify-content: center;
     width: 100%;
 }
-
 nav ul li a {
     color: var(--light-text);
     text-decoration: none;
@@ -2173,8 +2175,8 @@ footer {
     padding: 0;
     z-index: 1001;
     margin-left: auto; /* Push to the right */
+    position: relative;
 }
-
 .mobile-menu-toggle span {
     width: 100%;
     height: 3px;
@@ -2204,15 +2206,8 @@ footer {
         display: flex;
     }
     
-    .glass-navbar {
-        padding: 15px 20px;
-    }
-    
-    .glass-navbar > * {
-        flex-shrink: 0;
-    }
-    
     .glass-navbar nav {
+        display: none;
         position: fixed;
         top: 0;
         right: -100%;
@@ -2230,7 +2225,16 @@ footer {
     }
     
     .glass-navbar nav.active {
+        display: flex;
         right: 0;
+    }
+    
+    .glass-navbar {
+        padding: 15px 20px;
+    }
+    
+    .glass-navbar > * {
+        flex-shrink: 0;
     }
     
     nav ul {
@@ -2255,11 +2259,8 @@ footer {
         width: calc(100% - 40px);
         text-align: center;
     }
-    
 
-}
-
-/* Additional responsive fixes */
+}/* Additional responsive fixes */
 @media (max-width: 480px) {
     .glass-section {
         padding: 50px 15px;
